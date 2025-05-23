@@ -24,6 +24,12 @@ class CategoryModelTest(TestCase):
         self.assertIn("name", category_dict)
         self.assertEqual(category_dict["name"], "Desserts")
 
+    
+    def test_category_save_and_retrieve(self):
+        """Тест для перевірки збереження та отримання об'єкта"""
+        saved_category = Category.objects.get(id=self.category.id)
+        self.assertEqual(saved_category.name, self.category.name)
+
 
     
 
