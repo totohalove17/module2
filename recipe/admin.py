@@ -8,8 +8,9 @@ class RecipeAdmin(admin.ModelAdmin):
     search_fields = ('title', 'description')
     readonly_fields = ('created_at', 'updated_at')
 
+
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
+    list_display = ('name',)
 
 
 admin.site.register(Recipe, RecipeAdmin)
