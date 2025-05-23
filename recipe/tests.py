@@ -14,3 +14,12 @@ class RecipeModelTest(TestCase):
             ingredients="яблука, яйця, борошно, цукор",
             category=self.category,
         )
+
+        self.assertEqual(recipe.title, "Шарлотка")
+        self.assertEqual(recipe.description, "Простий яблучний пиріг.")
+        self.assertIn("яблука", recipe.ingredients)
+        self.assertEqual(recipe.category, self.category)
+        self.assertEqual(str(recipe), "Шарлотка")
+
+        self.assertIsNotNone(recipe.created_at)
+        self.assertIsNotNone(recipe.updated_at)
