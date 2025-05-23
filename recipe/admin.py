@@ -12,5 +12,6 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
 
 
+
 admin.site.register(Recipe, RecipeAdmin)
 admin.site.register(Category, CategoryAdmin)
