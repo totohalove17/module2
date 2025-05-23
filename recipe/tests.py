@@ -30,7 +30,26 @@ class CategoryModelTest(TestCase):
         saved_category = Category.objects.get(id=self.category.id)
         self.assertEqual(saved_category.name, self.category.name)
 
+        
+class RecipeModelTest(TestCase):
+    def setUp(self):
+        self.category = Category.objects.create(name="Десерти")
 
-    
+    def test_create_recipe(self):
+        recipe = Recipe.objects.create(
+            title="Шарлотка",
+            description="Простий яблучний пиріг.",
+            instructions="Змішати інгредієнти та випікати 40 хвилин.",
+            ingredients="яблука, яйця, борошно, цукор",
+            category=self.category,
+        )
 
-    
+        self.assertEqual(recipe.title, "Шарлотка")
+        self.assertEqual(recipe.description, "Простий яблучний пиріг.")
+        self.assertIn("яблука", recipe.ingredients)
+        self.assertEqual(recipe.category, self.category)
+        self.assertEqual(str(recipe), "Шарлотка")
+
+        self.assertIsNotNone(recipe.created_at)
+        self.assertIsNotNone(recipe.updated_at)
+
