@@ -10,7 +10,7 @@ class RecipeAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('id','name')
 
 
 admin.site.register(Recipe, RecipeAdmin)
