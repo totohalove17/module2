@@ -13,3 +13,10 @@ class CategoryModelTest(TestCase):
         self.assertIsInstance(self.category, Category)
 
     
+    def test_category_str_method(self):
+        """Тест для перевірки методу __str__"""
+        self.assertEqual(str(self.category), "Desserts")
+
+    
+
+    
