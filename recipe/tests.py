@@ -17,6 +17,14 @@ class CategoryModelTest(TestCase):
         """Тест для перевірки методу __str__"""
         self.assertEqual(str(self.category), "Desserts")
 
+    def test_category_iter_method(self):
+        """Тест для перевірки методу __iter__"""
+        category_dict = dict(self.category)
+        self.assertIn("id", category_dict)
+        self.assertIn("name", category_dict)
+        self.assertEqual(category_dict["name"], "Desserts")
+
+
     
 
     
