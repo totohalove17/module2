@@ -3,3 +3,11 @@
 *.pyc
 *.pyo
 *.pyd
+
+*.dbsqlite3
+
+# Ignore environment variables
+.env
+
+# Ignore static files
+/staticfiles/
